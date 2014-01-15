@@ -1,42 +1,712 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+<head>
+ <title>ControlaTIC</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+ <meta name=viewport content="user-scalable=no,width=device-width" />
+ <link rel=stylesheet href=css/jquery.mobile.structure-1.3.2.min.css />
+ <link rel=stylesheet href=css/ControlaTICv02.css />
+ <link href=' http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+ <!-- <script src=js/head.load.min.js></script> -->
+ <script src=js/jquery-1.10.2.min.js></script>
+ <script src=js/jquery.mobile-1.3.2.min.js></script>
+ <script src=js/cordova-2.9.0.js></script>
+ 
+ 	<script>
+
+		function sendAyuda()
+		{
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("POST","http://dev.protegeles.es/app/es_tramitar_app.php",true);
+			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			var textoAyuda = document.getElementById('contenidoayuda').value;
+			xmlhttp.send("contenidoayuda=" + textoAyuda);
+			// xmlhttp.open("GET","http://dev.protegeles.es/app/es_tramitar_app.php?contenidoilegal="+texto,true);
+			// xmlhttp.send();
+			// var resultado = xmlhttp.responseText;
+			// alert("Enviado " + texto + "\ncon resultado " + resultado);
+			// $.mobile.changePage( $("#inicio") );
+		}
+		
+	</script>
+	
+	<style type="text/css">
+	
+	h1{
+		font-family: 'Open Sans'
+		width:400px;
+		font-weight: normal;
+		color: #ffffff;
+		padding:5px 0;
+		<--! margin:20px 0 40px 0; -->
+		<--! background:url(img/h1.png); -->
+		text-align:center;
+	}
+	
+	span.ui-btn-inner {
+		font-size: 13px;
+		white-space: normal;
+	}
+	
+	.ui-btn {
+		text-align: left;
+		font-weight: normal;
+	}
+	
+	<!--
+	.ui-fullsize .ui-btn-inner, .ui-fullsize .ui-btn-inner {
+		font-size: 13px;
+		white-space: normal;
+	}
+	-->
+			
+	</style>
+</head>
+<body>
+
+
+	
+	<!-- Portada -->
+		
+	<div data-role=page id="portada" data-theme="b" style="background-image:url(img/fondo_index_texto.jpg);background-repeat:no-repeat;background-position:center;">
+	
+		<div data-role="content">
+		
+			<div style="height: 350px;"></div>
+			<p align="center"><a href="#inicio" data-role="button" data-inline="true" data-transition="none">Inicio</a></p>
+			
+		</div><!-- /content -->
+
+	</div>
+	
+	
+	<!-- Menu inicio -->
+	
+	<div data-role=page id="inicio" data-theme="b" style="background-image:url(img/fondo_inicio.jpg);background-repeat:no-repeat;background-position:center;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+	
+		<div data-role="content" id="paginainicio">
+		
+			<p align="center" style="font-size:18pt;">Elige una opción</p>
+			
+			<div align="left">
+				<img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png">
+				<span><a href="#adiccion" data-role="button" data-inline="true" data-transition="none" data-theme="e">Adicción a Internet</a></span>
+			</div>
+			<div align="left">
+				<img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png">
+				<span><a href="#consejos" data-role="button" data-inline="true" data-transition="none" data-theme="c">Consejos</a></span>
+			</div>
+			<div align="left">
+				<img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png">
+				<span><a href="#ayuda" data-role="button" data-inline="true" data-transition="none" data-theme="b">Ayuda</a></span>
+			</div>
+			<div align="left">
+				<img style="height:60px;vertical-align:middle;" src="img/boton_test.png">
+				<span><a href="#test" data-role="button" data-inline="true" data-transition="none" data-theme="d">Test</a></span>
+			</div>
+
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+			
+	</div>
+	
+	<!-- Adiccion -->
+	
+	<div data-role=page id="adiccion" data-theme="e" style="background-image:url(img/fondo_adiccion.jpg);background-repeat:no-repeat;background-position:center;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+	
+		<div data-role="content" id="paginaadiccion">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_adiccion.png" style="height:40px;vertical-align:middle;">
+			La adicción
+			</p>
+
+			<p style="font-size:13px;">
+			Cuando hacemos un uso abusivo de algo podemos desarrollar una adicción que hará que nos sintamos mal, y que no aprovechemos realmente la herramienta. Si quieres disfrutar de Internet debes aprender a identificar las características de la adicción.
+			</p>
+
+			<p><a href="#toleranciapopup" data-role="button" data-rel="popup" data-position-to="window">Tolerancia</a></p>
+			<div data-role="popup" id="toleranciapopup" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Se produce cuando necesitamos utilizar cada vez más tiempo las tecnologías para sentirnos mejor ¡Al final nunca es suficiente!</p>
+			</div>
+			
+			<p><a href="#abstinenciapopup" data-role="button" data-rel="popup" data-position-to="window">Sindrome de abstinencia</a></p>
+			<div data-role="popup" id="abstinenciapopup" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Se produce cuando nos sentimos mal al no poder utilizar las tecnologías. Nos sentimos nerviosos, ansiosos, e incluso nos enfadamos.</p>
+			</div>
+
+			<p><a href="#dependenciapopup" data-role="button" data-rel="popup" data-position-to="window">Dependencia</a></p>
+			<div data-role="popup" id="dependenciapopup" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Se produce cuando necesitamos utilizar las tecnologías cada vez más tiempo y sufrimos si no podemos hacerlo (Tolerancia + Abstinencia).</p>
+			</div>
+			
+
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"  class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+			
+	</div>
+	
+	<!-- Consejos -->
+	
+	<div data-role=page id="consejos" data-theme="c" style="background-image:url(img/fondo_consejos.jpg);background-repeat:no-repeat;background-position:center;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+	
+		<div data-role="content" id="paginaconsejos">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_consejos.png" style="height:40px;vertical-align:middle;">
+			Consejos
+			</p>
+			
+			<p style="font-size:13px;" align="center">
+			Pulsa en los botones para leer los consejos.
+			</p>
+
+
+			<p align="center">
+			<a href="#consejo1" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">1</a>
+			<a href="#consejo2" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">2</a>
+			<a href="#consejo3" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">3</a>
+			</p>
+			<p align="center">
+			<a href="#consejo4" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">4</a>
+			<a href="#consejo5" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">5</a>
+			<a href="#consejo6" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">6</a>
+			</p>
+			<p align="center">
+			<a href="#consejo7" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">7</a>
+			<a href="#consejo8" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">8</a>
+			<a href="#consejo9" data-role="button" data-rel="popup" data-position-to="window" data-inline="true">9</a>
+			</p>
+			
+			<div data-role="popup" id="consejo1" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Limita los sitios o las actividades en las que utilizas el teléfono móvil: mientras estudias, en clase, viendo una película, en un concierto...</p>
+			</div>
+			
+			<div data-role="popup" id="consejo2" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Si quedas con tus amigos, céntrate en la conversación con ellos y no estés continuamente con el móvil.</p>
+			</div>
+			
+			<div data-role="popup" id="consejo3" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Si te cuesta no comprobar la actividad de tu teléfono móvil, aunque sepas que no es el momento ni el lugar, lo mejor que puedes hacer es apagarlo... ¡Evitarás tentaciones!</p>
+			</div>
+			
+			<div data-role="popup" id="consejo4" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">No pasa nada si un día no puedes utilizar Internet, el móvil o los videojuegos: ¡¡la vida continúa!!</p>
+			</div>
+			
+			<div data-role="popup" id="consejo5" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Cuida la seguridad de los dispositivos que utilizas, ya que es una forma de cuidarte a ti mismo: asegúrate de que tienes instalado un antivirus, léete las políticas de privacidad y las condiciones de uso de los servicios que utilices, etc. </p>
+			</div>
+			
+			<div data-role="popup" id="consejo6" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Si te gustan los videojuegos, úsalos en un horario adecuado y establece un tiempo máximo para jugar.</p>
+			</div>
+			
+			<div data-role="popup" id="consejo7" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Necesitas descansar por las noches, así que apaga el móvil, la tablet, la videoconsola o el ordenador cuando te vayas a dormir.</p>
+			</div>
+			
+			<div data-role="popup" id="consejo8" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Diversifica tu ocio: no ocupes todo tu tiempo libre con las nuevas tecnologías. Por ejemplo, haz deporte, queda con tus amigos, etc.</p>
+			</div>
+			
+			<div data-role="popup" id="consejo9" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">Si mucha gente te dice que estás "enganchado", piensa que puede que tengan razón: revisa cómo usas las nuevas tecnologías.</p>
+			</div>
+			
+
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+			
+	</div>
+	
+	<!-- Ayuda -->
+	
+	<div data-role=page id="ayuda" data-theme="b" style="background-image:url(img/fondo_ayuda.jpg);background-repeat:no-repeat;background-position:center;">
+
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content" id="paginaayuda">
+					
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_ayuda.png" style="height:40px;vertical-align:middle;">
+			Ayuda
+			</p>
+
+			<p style="font-size:13px;">
+			No lo olvides: si crees que puedes estar "enganchado", pide ayuda a tus padres o ponte en contacto con la Línea de Ayuda de PROTÉGELES enviándonos un correo a:
+ 			</p>
+			<p align="center"><img src="img/ayuda_boton.png"></p>
+
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div>
+	
+	<!-- Test -->
+	
+	<div data-role=page id="test" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
+			<span style="width: 5pt;"></span>Test
+			</p>
+
+			<p align="center" style="font-size:13px;">¡Mide tu nivel de adicción!</p>
+
+			<div style="height: 10px;"></div>
+
+			<P align="center">
+			<a href="#test01" data-role="button" data-inline="true" data-transition="none">Empezar</a>
+			</p>
+		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+	</div>
+	
+	<!-- Test01 -->
+	
+	<div data-role=page id="test01" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
+			<span style="width: 5pt;"></span>Test ( 1 de 14 )
+			</p>
+			
+			<p align="left" style="font-size:13px;">¿Con qué frecuencia permaneces conectado a internet, al móvil o a los videojuegos más tiempo del que tenías previsto?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio11" id="radio11" value="seleccion11">
+					<label for="radio11">Nunca / Casi nunca</label>
+					<input type="radio" name="radio12" id="radio12" value="seleccion12">
+					<label for="radio12">A veces</label>
+					<input type="radio" name="radio13" id="radio13" value="seleccion13">
+					<label for="radio13">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test02" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test01 -->
+	
+	<!-- Test02 -->
+	
+	<div data-role=page id="test02" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
+			<span style="width: 5pt;"></span>Test ( 2 de 14 )
+			</p>
+			
+			<p align="left" style="font-size:13px;">¿Tus amigos y/o tus padres te dicen que estás "enganchado" a Internet, al móvil o a los videojuegos?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio21" id="radio21" value="seleccion21">
+					<label for="radio21">Nunca / Casi nunca</label>
+					<input type="radio" name="radio22" id="radio22" value="seleccion22">
+					<label for="radio22">A veces</label>
+					<input type="radio" name="radio23" id="radio23" value="seleccion23">
+					<label for="radio23">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test03" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test02 -->
+	
+	<!-- Test03 -->
+	
+	<div data-role=page id="test03" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
+			<span style="width: 5pt;"></span>Test ( 3 de 14 )
+			</p>
+			
+			<p align="left" style="font-size:13px;">¿Con qué frecuencia dejas tus obligaciones por el tiempo que pasas conectado a  internet, al móvil o a los videojuegos?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio31" id="radio31" value="seleccion31">
+					<label for="radio31">Nunca / Casi nunca</label>
+					<input type="radio" name="radio32" id="radio32" value="seleccion32">
+					<label for="radio32">A veces</label>
+					<input type="radio" name="radio33" id="radio33" value="seleccion33">
+					<label for="radio33">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test04" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test03 -->
+	
+	<!-- Test04 -->
+	
+	<div data-role=page id="test04" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
+			<span style="width: 5pt;"></span>Test ( 4 de 14 )
+			</p>
+			
+			<p align="left" style="font-size:13px;">¿Con qué frecuencia te sientes deprimido, ansioso, o de mal humor, si no puedes conectarte a internet, al móvil o a los videojuegos?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio41" id="radio41" value="seleccion41">
+					<label for="radio41">Nunca / Casi nunca</label>
+					<input type="radio" name="radio42" id="radio42" value="seleccion42">
+					<label for="radio42">A veces</label>
+					<input type="radio" name="radio43" id="radio43" value="seleccion43">
+					<label for="radio43">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test05" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test04 -->
+	
+	<!-- Test05 -->
+	
+	<div data-role=page id="test05" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
+			<span style="width: 5pt;"></span>Test ( 5 de 14 )
+			</p>
+			
+			<p align="left" style="font-size:13px;">¿Has intentado pasar menos tiempo conectado a internet, al móvil o a los videojuegos, y no lo has conseguido?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio51" id="radio51" value="seleccion51">
+					<label for="radio51">Nunca / Casi nunca</label>
+					<input type="radio" name="radio52" id="radio52" value="seleccion52">
+					<label for="radio52">A veces</label>
+					<input type="radio" name="radio53" id="radio53" value="seleccion53">
+					<label for="radio53">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test06" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test05 -->
+	
+	<!-- Test06 -->
+	
+	<div data-role=page id="test06" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
+			<span style="width: 5pt;"></span>Test ( 6 de 14 )
+			</p>
+			
+			<p align="left" style="font-size:13px;">¿Mientes sobre la cantidad de tiempo que pasas conectado a internet, al móvil o a los videojuegos?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio61" id="radio61" value="seleccion61">
+					<label for="radio61">Nunca / Casi nunca</label>
+					<input type="radio" name="radio62" id="radio62" value="seleccion62">
+					<label for="radio62">A veces</label>
+					<input type="radio" name="radio63" id="radio63" value="seleccion63">
+					<label for="radio63">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#testfinal" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test06 -->
+	
+	<!-- TestFinal -->
+	
+	<div data-role=page id="testfinal" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+		
+			<p align="center" style="font-size:18pt;">
+			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
+			<span style="width: 5pt;"></span>Test ( Resultados )
+			</p>
+			
+			<p align="left" style="font-size:13px;">Para conocer los resultados de tu test, pulsa sobre el siguiente botón.</p>
+
+			<p><a href="#resultados" data-role="button" data-rel="popup" data-position-to="window">Mis resultados</a></p>
+			<div data-role="popup" id="resultados" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">
+				<b>Estás enganchado.</b> ¡¡Cuidado!! Es muy posible que hayas perdido el control sobre el uso que haces de las nuevas tecnologías. Internet, el móvil o los videojuegos han dejado de ser un medio para divertirte o para relacionarte con otras personas y se han convertido en un fin en sí mismo. Además puede que no seas consciente de lo que te pasa y que te justifiques diciendo que no es para tanto, que todos tus amigos lo hacen o que es la única forma de evadirte de tus problemas.
+				<p align="justify" style="font-size:13px;">
+				Es posible que tú solo no puedas recuperar el control y por eso debes pedir ayuda. ¡¡Hazlo ya!!
+				</p>
+			</div>
+			
+			<p align="left" style="font-size:13px;">Si deseas enviar tus respuestas de manera anónima, pulsa sobre el siguiente botón. ¡Te lo agradecemos mucho!</p>
+
+			<p><a href="#enviarresultados" data-role="button" data-rel="popup" data-position-to="window">Enviar resultados anónimamente</a></p>
+			<div data-role="popup" id="enviarresultados" class="ui-content" style="max-width:400px">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p align="justify" style="font-size:13px;">
+				¡¡Muchas gracias por tu colaboración!!
+				</p>
+			</div>
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test06 -->
+	
+</body>
 </html>
