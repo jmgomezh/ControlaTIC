@@ -151,19 +151,19 @@
 
 			<p><a href="#toleranciapopup" data-role="button" data-rel="popup" data-position-to="window">Tolerancia</a></p>
 			<div data-role="popup" id="toleranciapopup" class="ui-content" style="max-width:400px">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<a href="#" data-rel="back" data-role="button" data-theme="e" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 				<p align="justify" style="font-size:13px;">Se produce cuando necesitamos utilizar cada vez más tiempo las tecnologías para sentirnos mejor ¡Al final nunca es suficiente!</p>
 			</div>
 			
 			<p><a href="#abstinenciapopup" data-role="button" data-rel="popup" data-position-to="window">Sindrome de abstinencia</a></p>
 			<div data-role="popup" id="abstinenciapopup" class="ui-content" style="max-width:400px">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<a href="#" data-rel="back" data-role="button" data-theme="e" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 				<p align="justify" style="font-size:13px;">Se produce cuando nos sentimos mal al no poder utilizar las tecnologías. Nos sentimos nerviosos, ansiosos, e incluso nos enfadamos.</p>
 			</div>
 
 			<p><a href="#dependenciapopup" data-role="button" data-rel="popup" data-position-to="window">Dependencia</a></p>
 			<div data-role="popup" id="dependenciapopup" class="ui-content" style="max-width:400px">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<a href="#" data-rel="back" data-role="button" data-theme="e" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 				<p align="justify" style="font-size:13px;">Se produce cuando necesitamos utilizar las tecnologías cada vez más tiempo y sufrimos si no podemos hacerlo (Tolerancia + Abstinencia).</p>
 			</div>
 			
@@ -358,7 +358,26 @@
 
 			<p align="center" style="font-size:13px;">¡Mide tu nivel de adicción!</p>
 
-			<div style="height: 10px;"></div>
+			<p align="center">
+			<label for="seleccionsexo" class="select">Soy...</label>
+			<select name="seleccionsexo" id="seleccionsexo" data-mini="true" data-inline="true">
+				<option value="chico">Chico</option>
+				<option value="chica">Chica</option>
+				<option value="sexono">No quiero decirlo</option>
+			</select>
+			</p>
+			
+			<p align="center">
+			<label for="seleccionedad" class="select">Tengo...</label>
+			<select name="seleccionedad" id="seleccionedad" data-mini="true" data-inline="true">
+				<option value="menos6">Menos de 6 años</option>
+				<option value="6a10">De 6 a 10 años</option>
+				<option value="11a14">De 11 a 14 años</option>
+				<option value="15a18">De 15 a 18 años</option>
+				<option value="mas18">Más de 18 años</option>
+				<option value="edadno">No quiero decirlo</option>
+			</select>
+			</p>
 
 			<P align="center">
 			<a href="#test01" data-role="button" data-inline="true" data-transition="none">Empezar</a>
@@ -619,7 +638,7 @@
 			</fieldset>
 			
 			<P align="center">
-			<a href="#testfinal" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			<a href="#test07" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
 			</p>		
 		
 		</div><!-- /content -->
@@ -637,6 +656,350 @@
 		</div><!-- /footer -->
 
 	</div><!-- /Test06 -->
+	
+	<!-- Test07 -->
+	
+	<div data-role=page id="test07" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+					
+			<p align="left" style="font-size:13px;"><b>(7/14)</b> ¿Con qué frecuencia prefieres estar conectado a internet, al móvil o a los videojuegos en lugar de estar con tus amigos?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio71" id="radio71" value="seleccion71">
+					<label for="radio71">Nunca / Casi nunca</label>
+					<input type="radio" name="radio72" id="radio72" value="seleccion72">
+					<label for="radio72">A veces</label>
+					<input type="radio" name="radio73" id="radio73" value="seleccion73">
+					<label for="radio73">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test08" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test07 -->
+	
+	<!-- Test08 -->
+	
+	<div data-role=page id="test08" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+					
+			<p align="left" style="font-size:13px;"><b>(8/14)</b> ¿Usas el móvil en lugares en los que está prohibido o limitado, como en clase, cine, teatro...?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio81" id="radio81" value="seleccion81">
+					<label for="radio81">Nunca / Casi nunca</label>
+					<input type="radio" name="radio82" id="radio82" value="seleccion82">
+					<label for="radio82">A veces</label>
+					<input type="radio" name="radio83" id="radio83" value="seleccion83">
+					<label for="radio83">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test09" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test08 -->
+
+	<!-- Test09 -->
+	
+	<div data-role=page id="test09" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+					
+			<p align="left" style="font-size:13px;"><b>(9/14)</b> ¿Con qué frecuencia piensas que deberías conectarte menos a internet, al móvil o a los videojuegos porque piensas que estás "enganchado"?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio91" id="radio91" value="seleccion91">
+					<label for="radio91">Nunca / Casi nunca</label>
+					<input type="radio" name="radio92" id="radio92" value="seleccion92">
+					<label for="radio92">A veces</label>
+					<input type="radio" name="radio93" id="radio93" value="seleccion93">
+					<label for="radio93">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test10" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test09 -->
+	
+	<!-- Test10 -->
+	
+	<div data-role=page id="test10" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+					
+			<p align="left" style="font-size:13px;"><b>(10/14)</b> ¿Prefieres no ir o evitas lugares en los que no vas a poder usar  internet, el móvil o  los videojuegos?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio101" id="radio101" value="seleccion101">
+					<label for="radio101">Nunca / Casi nunca</label>
+					<input type="radio" name="radio102" id="radio102" value="seleccion102">
+					<label for="radio102">A veces</label>
+					<input type="radio" name="radio103" id="radio103" value="seleccion103">
+					<label for="radio103">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test11" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test10 -->
+
+	<!-- Test11 -->
+	
+	<div data-role=page id="test11" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+					
+			<p align="left" style="font-size:13px;"><b>(11/14)</b> Si te dejas el móvil en casa, ¿te sientes mal pensando en si tendrás mensajes nuevos, o si te habrán llamado y no puedes responder en el momento?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio111" id="radio111" value="seleccion111">
+					<label for="radio111">Nunca / Casi nunca</label>
+					<input type="radio" name="radio112" id="radio112" value="seleccion112">
+					<label for="radio112">A veces</label>
+					<input type="radio" name="radio113" id="radio113" value="seleccion113">
+					<label for="radio113">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test12" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test11 -->
+
+	<!-- Test12 -->
+	
+	<div data-role=page id="test12" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+					
+			<p align="left" style="font-size:13px;"><b>(12/14)</b> ¿Interrumpes tu sueño o el estudio por utilizar internet, el móvil o  los videojuegos?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio121" id="radio121" value="seleccion121">
+					<label for="radio121">Nunca / Casi nunca</label>
+					<input type="radio" name="radio122" id="radio122" value="seleccion122">
+					<label for="radio122">A veces</label>
+					<input type="radio" name="radio123" id="radio123" value="seleccion123">
+					<label for="radio123">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test13" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test12 -->
+
+	<!-- Test13 -->
+	
+	<div data-role=page id="test13" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+					
+			<p align="left" style="font-size:13px;"><b>(13/14)</b> ¿Cuánto tiempo pasas al día jugando con los videojuegos?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio131" id="radio131" value="seleccion131">
+					<label for="radio131">Una hora o menos</label>
+					<input type="radio" name="radio132" id="radio132" value="seleccion132">
+					<label for="radio132">Cerca de dos horas</label>
+					<input type="radio" name="radio133" id="radio133" value="seleccion133">
+					<label for="radio133">Tres horas o más</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#test14" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test13 -->
+	
+	<!-- Test14 -->
+	
+	<div data-role=page id="test14" data-theme="d" style="background-image:url(img/fondo_test.jpg);background-repeat:no-repeat;">
+	
+		<div data-role="header"  data-theme="a" style="overflow:hidden;height:55px;">
+			<a href="#inicio" data-transition="none" data-theme="a"><img src="img/menu.png" style="vertical-align: middle;"></a>
+			<div><br><center><img src="img/header_logo.png"></div>
+			<a href="#portada" data-transition="none"><img src="img/info.png" style="vertical-align: middle;"></a>
+		</div><!-- /header -->
+
+		<div data-role="content">
+					
+			<p align="left" style="font-size:13px;"><b>(14/14)</b> ¿Con qué frecuencia tienes la sensación de que te cuesta compaginar tu vida online y tu vida offline?</p>
+
+			<fieldset data-role="controlgroup">
+					<input type="radio" name="radio141" id="radio141" value="seleccion141">
+					<label for="radio141">Nunca / Casi nunca</label>
+					<input type="radio" name="radio142" id="radio142" value="seleccion142">
+					<label for="radio142">A veces</label>
+					<input type="radio" name="radio143" id="radio143" value="seleccion143">
+					<label for="radio143">Muchas veces / Siempre</label>
+			</fieldset>
+			
+			<P align="center">
+			<a href="#testfinal" data-role="button" data-inline="true" data-transition="none" data-icon="arrow-r" data-iconpos="right">Siguiente</a>
+			</p>		
+		
+		</div><!-- /content -->
+		
+		<!-- Navegacion -->
+		<div data-role=footer data-position=fixed id="nav">
+			<div data-role=navbar>
+			 <ul>
+				<li><a href=#adiccion data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png"></a></li>
+				<li><a href=#consejos data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_consejos.png"></a></li>
+				<li><a href=#ayuda data-transition="none"><img style="height:60px;vertical-align:middle;" src="img/boton_ayuda.png"></a></li>
+				<li><a href=#test data-transition="none" class="ui-btn-active ui-state-persist"><img style="height:60px;vertical-align:middle;" src="img/boton_test.png"></a></li>
+			 </ul>
+			</div>
+		</div><!-- /footer -->
+
+	</div><!-- /Test14 -->
 	
 	<!-- TestFinal -->
 	
