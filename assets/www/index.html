@@ -68,11 +68,11 @@
 	
 	<!-- Portada -->
 		
-	<div data-role=page id="portada" data-theme="b" style="background-image:url(img/fondo_index_texto.jpg);background-repeat:no-repeat;background-position:center;">
+	<div data-role=page id="portada" data-theme="b" style="background-image:url(img/portada02.png);background-repeat:no-repeat;background-position:center;">
 	
 		<div data-role="content">
 		
-			<div style="height: 350px;"></div>
+			<div style="height: 380px;"></div>
 			<p align="center"><a href="#inicio" data-role="button" data-inline="true" data-transition="none">Inicio</a></p>
 			
 		</div><!-- /content -->
@@ -92,7 +92,7 @@
 	
 		<div data-role="content" id="paginainicio">
 		
-			<p align="center" style="font-size:18pt;">Elige una opción</p>
+			<p align="center" style="font-size:16pt;">Elige una opción</p>
 			
 			<div align="left">
 				<img style="height:60px;vertical-align:middle;" src="img/boton_adiccion.png">
@@ -140,13 +140,13 @@
 	
 		<div data-role="content" id="paginaadiccion">
 		
-			<p align="center" style="font-size:18pt;">
+			<p align="center" style="font-size:16pt;">
 			<img src="img/icono_adiccion.png" style="height:40px;vertical-align:middle;">
 			La adicción
 			</p>
 
 			<p style="font-size:13px;">
-			Cuando hacemos un uso abusivo de algo podemos desarrollar una adicción que hará que nos sintamos mal, y que no aprovechemos realmente la herramienta. Si quieres disfrutar de Internet debes aprender a identificar las características de la adicción.
+			Si quieres disfrutar de Internet debes aprender a identificar las características de la adicción.
 			</p>
 
 			<p><a href="#toleranciapopup" data-role="button" data-rel="popup" data-position-to="window">Tolerancia</a></p>
@@ -197,7 +197,7 @@
 	
 		<div data-role="content" id="paginaconsejos">
 		
-			<p align="center" style="font-size:18pt;">
+			<p align="center" style="font-size:16pt;">
 			<img src="img/icono_consejos.png" style="height:40px;vertical-align:middle;">
 			Consejos
 			</p>
@@ -298,7 +298,7 @@
 
 		<div data-role="content" id="paginaayuda">
 					
-			<p align="center" style="font-size:18pt;">
+			<p align="center" style="font-size:16pt;">
 			<img src="img/icono_ayuda.png" style="height:40px;vertical-align:middle;">
 			Ayuda
 			</p>
@@ -306,7 +306,22 @@
 			<p style="font-size:13px;">
 			No lo olvides: si crees que puedes estar "enganchado", pide ayuda a tus padres o ponte en contacto con la Línea de Ayuda de PROTÉGELES enviándonos un correo a:
  			</p>
-			<p align="center"><img src="img/ayuda_boton.png"></p>
+			<p align="center"><a href="#formularioayuda" data-role="button" data-rel="popup" data-position-to="window" data-inline="true" >contacto@protegeles.com</a></p>
+			<div data-role="popup" id="formularioayuda" class="ui-content" style="max-width:400px" data-dismissible="false">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<font size="2">
+				<form id="miFormularioAyuda">
+					<p><strong>Explícanos tu situación. No olvides incluir una dirección de correo electrónico.</strong>
+					<label for="url" class="ui-hidden-accessible">Contenido:</label>
+					<textarea cols="40" rows="8" name="contenidoayuda" id="contenidoayuda" placeholder="Esta es mi situación..." data-theme="a"></textarea>
+					<div align="center">
+					<button type="submit" data-theme="a" data-icon="check" onclick="sendAyuda()" data-inline="true" align="center">Enviar</button>
+					</div>
+					</p>
+				</form>				
+				</font>
+				</li>
+			</div>
 
 		</div><!-- /content -->
 		
@@ -336,7 +351,7 @@
 
 		<div data-role="content">
 		
-			<p align="center" style="font-size:18pt;">
+			<p align="center" style="font-size:16pt;">
 			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
 			<span style="width: 5pt;"></span>Test
 			</p>
@@ -376,13 +391,8 @@
 		</div><!-- /header -->
 
 		<div data-role="content">
-		
-			<p align="center" style="font-size:18pt;">
-			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
-			<span style="width: 5pt;"></span>Test ( 1 de 14 )
-			</p>
-			
-			<p align="left" style="font-size:13px;">¿Con qué frecuencia permaneces conectado a internet, al móvil o a los videojuegos más tiempo del que tenías previsto?</p>
+					
+			<p align="left" style="font-size:13px;"><b>(1/14)</b> ¿Con qué frecuencia permaneces conectado a internet, al móvil o a los videojuegos más tiempo del que tenías previsto?</p>
 
 			<fieldset data-role="controlgroup">
 					<input type="radio" name="radio11" id="radio11" value="seleccion11">
@@ -424,13 +434,8 @@
 		</div><!-- /header -->
 
 		<div data-role="content">
-		
-			<p align="center" style="font-size:18pt;">
-			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
-			<span style="width: 5pt;"></span>Test ( 2 de 14 )
-			</p>
-			
-			<p align="left" style="font-size:13px;">¿Tus amigos y/o tus padres te dicen que estás "enganchado" a Internet, al móvil o a los videojuegos?</p>
+					
+			<p align="left" style="font-size:13px;"><b>(2/14)</b> ¿Tus amigos y/o tus padres te dicen que estás "enganchado" a Internet, al móvil o a los videojuegos?</p>
 
 			<fieldset data-role="controlgroup">
 					<input type="radio" name="radio21" id="radio21" value="seleccion21">
@@ -472,13 +477,8 @@
 		</div><!-- /header -->
 
 		<div data-role="content">
-		
-			<p align="center" style="font-size:18pt;">
-			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
-			<span style="width: 5pt;"></span>Test ( 3 de 14 )
-			</p>
-			
-			<p align="left" style="font-size:13px;">¿Con qué frecuencia dejas tus obligaciones por el tiempo que pasas conectado a  internet, al móvil o a los videojuegos?</p>
+					
+			<p align="left" style="font-size:13px;"><b>(3/14)</b> ¿Con qué frecuencia dejas tus obligaciones por el tiempo que pasas conectado a  internet, al móvil o a los videojuegos?</p>
 
 			<fieldset data-role="controlgroup">
 					<input type="radio" name="radio31" id="radio31" value="seleccion31">
@@ -520,13 +520,8 @@
 		</div><!-- /header -->
 
 		<div data-role="content">
-		
-			<p align="center" style="font-size:18pt;">
-			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
-			<span style="width: 5pt;"></span>Test ( 4 de 14 )
-			</p>
-			
-			<p align="left" style="font-size:13px;">¿Con qué frecuencia te sientes deprimido, ansioso, o de mal humor, si no puedes conectarte a internet, al móvil o a los videojuegos?</p>
+					
+			<p align="left" style="font-size:13px;"><b>(4/14)</b> ¿Con qué frecuencia te sientes deprimido, ansioso, o de mal humor, si no puedes conectarte a internet, al móvil o a los videojuegos?</p>
 
 			<fieldset data-role="controlgroup">
 					<input type="radio" name="radio41" id="radio41" value="seleccion41">
@@ -568,13 +563,8 @@
 		</div><!-- /header -->
 
 		<div data-role="content">
-		
-			<p align="center" style="font-size:18pt;">
-			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
-			<span style="width: 5pt;"></span>Test ( 5 de 14 )
-			</p>
-			
-			<p align="left" style="font-size:13px;">¿Has intentado pasar menos tiempo conectado a internet, al móvil o a los videojuegos, y no lo has conseguido?</p>
+					
+			<p align="left" style="font-size:13px;"><b>(5/14)</b> ¿Has intentado pasar menos tiempo conectado a internet, al móvil o a los videojuegos, y no lo has conseguido?</p>
 
 			<fieldset data-role="controlgroup">
 					<input type="radio" name="radio51" id="radio51" value="seleccion51">
@@ -616,13 +606,8 @@
 		</div><!-- /header -->
 
 		<div data-role="content">
-		
-			<p align="center" style="font-size:18pt;">
-			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
-			<span style="width: 5pt;"></span>Test ( 6 de 14 )
-			</p>
-			
-			<p align="left" style="font-size:13px;">¿Mientes sobre la cantidad de tiempo que pasas conectado a internet, al móvil o a los videojuegos?</p>
+					
+			<p align="left" style="font-size:13px;"><b>(6/14)</b> ¿Mientes sobre la cantidad de tiempo que pasas conectado a internet, al móvil o a los videojuegos?</p>
 
 			<fieldset data-role="controlgroup">
 					<input type="radio" name="radio61" id="radio61" value="seleccion61">
@@ -665,7 +650,7 @@
 
 		<div data-role="content">
 		
-			<p align="center" style="font-size:18pt;">
+			<p align="center" style="font-size:16pt;">
 			<img src="img/icono_test.png" style="height:40px;vertical-align:middle;">
 			<span style="width: 5pt;"></span>Test ( Resultados )
 			</p>
@@ -679,16 +664,6 @@
 				<b>Estás enganchado.</b> ¡¡Cuidado!! Es muy posible que hayas perdido el control sobre el uso que haces de las nuevas tecnologías. Internet, el móvil o los videojuegos han dejado de ser un medio para divertirte o para relacionarte con otras personas y se han convertido en un fin en sí mismo. Además puede que no seas consciente de lo que te pasa y que te justifiques diciendo que no es para tanto, que todos tus amigos lo hacen o que es la única forma de evadirte de tus problemas.
 				<p align="justify" style="font-size:13px;">
 				Es posible que tú solo no puedas recuperar el control y por eso debes pedir ayuda. ¡¡Hazlo ya!!
-				</p>
-			</div>
-			
-			<p align="left" style="font-size:13px;">Si deseas enviar tus respuestas de manera anónima, pulsa sobre el siguiente botón. ¡Te lo agradecemos mucho!</p>
-
-			<p><a href="#enviarresultados" data-role="button" data-rel="popup" data-position-to="window">Enviar resultados anónimamente</a></p>
-			<div data-role="popup" id="enviarresultados" class="ui-content" style="max-width:400px">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<p align="justify" style="font-size:13px;">
-				¡¡Muchas gracias por tu colaboración!!
 				</p>
 			</div>
 		
